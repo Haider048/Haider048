@@ -1,11 +1,11 @@
 <div align="center">
 
-![Header](https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,100:00ff41&height=200&section=header&text=Haider%20Jamal&fontSize=45&fontColor=00ff41&fontAlignY=35&desc=Penetration%20Tester%20%7C%20CEH%20Certified&descAlignY=55&descColor=8b949e&animation=fadeIn)
+![Header](https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,100:00ff41&height=200&section=header&text=Haider%20Jamal&fontSize=45&fontColor=00ff41&fontAlignY=35&desc=SOC%20Analyst%20%7C%20Blue%20Team%20%7C%20CEH%20Certified&descAlignY=55&descColor=8b949e&animation=fadeIn)
 
 ```
 [root@haider]─[~]$ whoami
-> Certified Ethical Hacker | Offensive Security Focus
-> Breaking things in isolated labs so I can explain exactly how — and how to fix it
+> Cybersecurity practitioner | Networking → Detection Engineering → Incident Response
+> Turning noisy logs into signal, and attacks into documented, escalated, remediated cases
 ```
 
 </div>
@@ -15,127 +15,118 @@
 ## `~/about`
 
 ```yaml
-role:          Penetration Tester / Red Team (Aspiring)
+role:          Aspiring SOC Analyst L1 (Blue Team)
 certification: CEH (Certified Ethical Hacker) — Corvit, NAVTTC — Completed
 also_studying: CCNP, Huawei (GNS3 / eNSP)
-focus:         Recon → Enumeration → Vulnerability Analysis → Exploitation → Post-Exploitation
-philosophy:    Labs > theory. Evidence > claims. Every exploit gets a remediation.
+focus:         Detection Engineering → Alert Triage → Incident Response → Threat Hunting
+philosophy:    A SIEM that fires 200 alerts/day and gets ignored is worse than one that fires 12
+               and gets read. Every detection should map to a real technique, not just a log line.
 ```
 
 <br>
 
 ## `~/lab-infrastructure`
 
-Everything below runs in an isolated, host-only virtualized lab — Kali as the attack box, Windows/Metasploitable2 as intentionally vulnerable targets, never against anything I don't own or have authorization for.
+Everything below runs in an isolated, host-only virtualized lab — attacks simulated from Kali, observed and triaged through the SOC stack, never against anything I don't own or have authorization for.
 
 | Layer | Stack |
 |---|---|
 | **Virtualization** | VMware Workstation, EVE-NG, GNS3, Cisco Packet Tracer |
-| **Attack box** | Kali Linux |
-| **Targets** | Metasploitable 2, Windows 7/10/11 VMs (XAMPP-simulated services), Cisco 3640 (GNS3) |
+| **Attack simulation** | Kali Linux (used to generate realistic telemetry, not for its own sake) |
+| **Targets / victims** | Metasploitable 2, Windows 10/11 VMs, Cisco 3640 (GNS3) |
+| **SIEM / Detection stack** | Wazuh (Manager, Indexer, Dashboard) + Sysmon + custom Sigma rules |
 | **Networking gear (virtual)** | Cisco routers/switches (IOS), HSRP/VRRP/GLBP labs |
 
 <br>
 
 ## `~/skills`
 
+![Detection](https://img.shields.io/badge/Detection_Engineering-SIEM_Tuning_|_Sigma_Rules_|_Alert_Triage-161b22?style=for-the-badge&logo=elastic&logoColor=00ff41&labelColor=161b22)
+![IR](https://img.shields.io/badge/Incident_Response-Case_Documentation_|_Escalation_|_Remediation-161b22?style=for-the-badge&logo=grafana&logoColor=00ff41&labelColor=161b22)
+![MITRE](https://img.shields.io/badge/MITRE_ATT%26CK-Technique_Mapping_|_LOLBins_|_TTP_Analysis-161b22?style=for-the-badge&logo=mitre&logoColor=00ff41&labelColor=161b22)
+![Forensics](https://img.shields.io/badge/Forensics-PCAP_Analysis_|_IOC_Extraction_|_Log_Correlation-161b22?style=for-the-badge&logo=wireshark&logoColor=00ff41&labelColor=161b22)
 ![Networking](https://img.shields.io/badge/Networking-Subnetting_|_VLANs_|_NAT_|_ACLs_|_OSPF/RIP/BGP-161b22?style=for-the-badge&logo=cisco&logoColor=00ff41&labelColor=161b22)
-![OS](https://img.shields.io/badge/Systems-Linux(Kali/Debian/RHEL)_|_Windows_Server_|_AD-161b22?style=for-the-badge&logo=linux&logoColor=00ff41&labelColor=161b22)
-![Offensive](https://img.shields.io/badge/Offensive-Recon_|_Enumeration_|_Exploitation_|_Post--Exploitation-161b22?style=for-the-badge&logo=hackthebox&logoColor=00ff41&labelColor=161b22)
-![WebSec](https://img.shields.io/badge/Web_Security-OWASP_Top_10_|_DAST_|_Manual_Validation-161b22?style=for-the-badge&logo=owasp&logoColor=00ff41&labelColor=161b22)
-![Net](https://img.shields.io/badge/Network_Attacks-ARP_Poisoning_|_MITM_|_Packet_Analysis-161b22?style=for-the-badge&logo=wireshark&logoColor=00ff41&labelColor=161b22)
+![OSINT](https://img.shields.io/badge/OSINT-Recon_|_Exposure_Mapping_|_Risk_Prioritization-161b22?style=for-the-badge&logo=shodan&logoColor=00ff41&labelColor=161b22)
 
 **Tools:**
 
-![Nmap](https://img.shields.io/badge/Nmap-161b22?style=flat-square&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDBmZjQxIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48Y2lyY2xlIGN4PSIxMSIgY3k9IjExIiByPSI3Ij48L2NpcmNsZT48bGluZSB4MT0iMjEiIHkxPSIyMSIgeDI9IjE2IiB5Mj0iMTYiPjwvbGluZT48L3N2Zz4K)
+![Wazuh](https://img.shields.io/badge/Wazuh-161b22?style=flat-square&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDBmZjQxIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTIgMjJzOC00IDgtMTBWNWwtOC0zLTggM3Y3YzAgNiA4IDEwIDggMTB6Ij48L3BhdGg+PC9zdmc+Cg==)
+![Suricata](https://img.shields.io/badge/Suricata-161b22?style=flat-square&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDBmZjQxIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxLjUiIGZpbGw9IiMwMGZmNDEiPjwvY2lyY2xlPjxwYXRoIGQ9Ik0xNi4yIDcuOGE2IDYgMCAwIDEgMCA4LjRNNy44IDcuOGE2IDYgMCAwIDAgMCA4LjRNMTkgNWExMCAxMCAwIDAgMSAwIDE0TTUgNWExMCAxMCAwIDAgMCAwIDE0Ij48L3BhdGg+PC9zdmc+Cg==)
 ![Wireshark](https://img.shields.io/badge/Wireshark-161b22?style=flat-square&logo=wireshark&logoColor=00ff41)
-![Metasploit](https://img.shields.io/badge/Metasploit-161b22?style=flat-square&logo=metasploit&logoColor=00ff41)
-![Burp](https://img.shields.io/badge/Burp_Suite-161b22?style=flat-square&logo=burpsuite&logoColor=00ff41)
+![Nmap](https://img.shields.io/badge/Nmap-161b22?style=flat-square&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDBmZjQxIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48Y2lyY2xlIGN4PSIxMSIgY3k9IjExIiByPSI3Ij48L2NpcmNsZT48bGluZSB4MT0iMjEiIHkxPSIyMSIgeDI9IjE2IiB5Mj0iMTYiPjwvbGluZT48L3N2Zz4K)
 ![Kali](https://img.shields.io/badge/Kali_Linux-161b22?style=flat-square&logo=kalilinux&logoColor=00ff41)
-![Ettercap](https://img.shields.io/badge/Ettercap-161b22?style=flat-square&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDBmZjQxIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMiAxMiAxOCAxMiAxNSAyMSA5IDMgNiAxMiAyIDEyIj48L3BvbHlsaW5lPjwvc3ZnPgo=)
 
-`Nmap · Gobuster · Shodan · SearchSploit · Metasploit/Meterpreter · John the Ripper · Hydra · Nessus · OpenVAS/Greenbone · OWASP ZAP · Burp Suite · Wireshark · Ettercap · Lynis · Aircrack-ng`
+`Wazuh · Sysmon · Suricata · Sigma Rules · MITRE ATT&CK Navigator · Wireshark · Nmap · Nessus · Lynis · OSINT tooling (Aliens Eye, MailAccess, Subfinder/dnsenum/dnsrecon) · Ettercap`
 
 <br>
 
 ## `~/evidence-portfolio`
 
-> Documented, reproducible offensive work — not just "I installed the tool."
+> Documented blue-team work — detection, triage, and response, not just "SIEM installed."
 
 ```
-[+] Metasploitable 2 — Nessus Vulnerability Assessment
-    436 findings | 28 Critical · 99 High · 148 Medium · 20 Low · 141 Info
-    Critical: Apache PHP-CGI RCE, Shellshock, bind-shell backdoor,
-              phpMyAdmin SQLi exposure, UnrealIRCd backdoor, weak VNC creds
+[+] Incident Response Case Documentation
+    Documented 3 end-to-end security incidents, each carried from attack simulation through
+    Wazuh detection, MITRE ATT&CK technique mapping, ticket escalation, and remediation —
+    modeling the full SOC Level 1 triage workflow a real analyst would run: alert → validate →
+    classify severity → map to ATT&CK → escalate → close with remediation notes.
 
-[+] Metasploitable 2 — Controlled Exploitation & Pentest Report
-    - Bind shell backdoor (ingreslock/1524)  → root shell, validated via Nmap + netcat
-    - UnrealIRCd 3.2.8.1 backdoor            → Meterpreter session, root access
-    - VNC weak credential ("password")       → validated via Metasploit aux scanner
-    - Apache PHP-CGI argument injection      → vuln confirmed, alt. exploit path documented
-    Each finding paired with remediation guidance.
+[+] SIEM Alert Tuning
+    Reduced Wazuh alert volume by 94% (200 → 12 alerts/day) by tuning custom rules and decoder
+    logic — while preserving true-positive detection rate. The point of tuning isn't fewer
+    alerts for its own sake; it's making sure the 12 that fire are the 12 that matter, so
+    analyst fatigue doesn't bury a real incident under noise.
 
-[+] OWASP ZAP — Web Application Assessment (v2.17.0)
-    Target: Metasploitable2 (DVWA, Mutillidae II, TWiki, phpMyAdmin, WebDAV)
-    23 findings | Highest: High (MD5-crypt hash disclosure)
-    Medium: missing CSP, directory browsing, vulnerable JS library, no anti-clickjacking
+[+] Custom Sigma Detection Rule
+    Identified a coverage gap in the SIEM baseline for LOLBin (Living-off-the-Land Binary)
+    execution — a technique that abuses legitimate OS binaries to evade signature-based
+    detection — and wrote a custom Sigma rule to close it, extending detection beyond
+    out-of-the-box coverage.
 
-[+] ARP Poisoning / MITM Lab — Ettercap + Wireshark
-    Topology: Kali (attacker) · Windows 7 (victim 1) · Windows 10 (victim 2) — isolated host-only network
+[+] OSINT Risk Assessment
+    Converted raw OSINT reconnaissance findings into a risk-prioritized exposure report,
+    mapping each finding to exploitability and business impact rather than just listing
+    what was found — turning recon data into something a security team can actually act on.
 
-    Baseline:
-    - Recorded IPv4 + MAC for both Windows hosts (ipconfig /all) and Kali's eth0 (ifconfig)
-    - Verified clean ARP state on both victims (arp -a) — each held the other's true MAC, no Kali entry
-    - Confirmed baseline reachability with ICMP between victims (no poisoning yet)
+[+] Network Traffic Forensic Analysis
+    Correlated SIEM alerts with raw packet captures (PCAP) to validate detections and extract
+    indicators of compromise (IOCs), closing the loop between "the SIEM fired" and "here's the
+    actual evidence proving what happened on the wire."
 
-    Attack:
-    - Launched Ettercap (GUI mode) on Kali, sniffing on eth0
-    - Performed a host scan, identified both Windows machines from the host list
-    - Assigned Win7 → Target 1, Win10 → Target 2
-    - Enabled IP forwarding on Kali (net.ipv4.ip_forward = 1) so poisoned traffic would route
-      through the attacker instead of black-holing
-    - Launched MITM → ARP Poisoning attack
-
-    Validation:
-    - Re-checked arp -a on both victims — each host's ARP table now resolved the other's IP
-      to Kali's MAC address, confirming successful cache poisoning
-    - Started a live Wireshark capture on Kali's eth0
-    - Generated ICMP traffic between the two Windows hosts and observed it transiting through
-      the attacker, visible directly in the Wireshark capture
-
-    Takeaway: demonstrates the core weakness ARP exploits — no authentication on ARP replies —
-    and the practical mechanics of a Layer 2 MITM: poison → verify cache corruption → enable
-    forwarding to stay transparent → intercept with a packet analyzer.
-
-[+] Network Forensics — Malware Delivery + C2 Investigation (PCAP)
-    Victim requested /update.exe x4 over HTTP:8000 → outbound TCP:4444 to C2 host
-    ~566KB transferred in <1s post-handshake, ~67s sustained bidirectional session
-    Pattern consistent with staged Meterpreter payload + interactive C2
+[+] Supporting Case: Malware Delivery + C2 Investigation (PCAP)
+    Victim requested /update.exe x4 over HTTP:8000 → outbound TCP:4444 to a C2 host.
+    ~566KB transferred in <1s post-handshake, ~67s sustained bidirectional session — a pattern
+    consistent with a staged Meterpreter payload and interactive C2. Flags used to build the
+    case: PE-over-HTTP, non-standard port, staged transfer, plaintext C2 channel.
 
 [+] Nessus / Wireshark — Windows Network Scan Analysis
     15,621 packets / ~16 min capture | ~623 TCP ports probed via SYN scan
     SMB/RPC enumeration (LSA, SAMR, share enum) + default SNMP "public" string found
-    Correctly distinguished recon/enum activity from actual exploitation
-
-[+] Cisco 3640 — Nessus Vulnerability Assessment (GNS3)
-    Network-device-focused scan with full severity breakdown
+    Correctly distinguished recon/enumeration activity from actual exploitation — a core
+    triage skill: not every scan hit is an incident.
 
 [+] Lynis — Linux Security Audit (Kali)
     269 tests | Hardening index: 60/100 | 1 warning, 49 suggestions
     Findings: inactive firewall/IDS, fail2ban gap, GRUB & PAM hardening opportunities
 
-[+] OSINT & Recon Tooling
-    Aliens Eye     — username OSINT scanner across 840+ platforms
-    MailAccess     — email investigation/harvesting workflow (venv-based CLI tool)
-    OSINT Recon    — subdomain/DNS enumeration (dnsenum, dnsrecon, dig, Subfinder) on a
-                     real target, uncovered internal subdomains (sonarqube/vpn/UAT) behind
-                     real origin IPs missed by standard footprinting
-
-[+] AI-Assisted Offensive Tooling
-    HexStrike AI & pentest-ai (ptai) — MCP-driven offensive tool orchestration (150+ modules,
-    17 specialist agents), self-verifying scan/exploit findings, natural-language-driven
-    recon and exploitation workflows — used strictly in authorized lab environments
+[+] Metasploitable 2 — Nessus Vulnerability Assessment
+    436 findings | 28 Critical · 99 High · 148 Medium · 20 Low · 141 Info
+    Used as the baseline "known-vulnerable" environment against which detections were later
+    built and validated — understanding what's exploitable is what makes the detection side
+    meaningful instead of guesswork.
 ```
+
+<br>
+
+## `~/detection-engineering-workflow`
+
+The core loop this profile is built around — going from "SIEM installed" to an analyst who actually reduces noise and closes cases.
+
+- **Wazuh** deployed: Manager / Indexer / Dashboard, with Windows + Kali agents reporting in
+- **Sysmon** configured on Windows, `Microsoft-Windows-Sysmon/Operational` feeding into Wazuh telemetry
+- Workflow: simulate attack in the Kali lab → observe endpoint/network telemetry → tune Wazuh rules/decoders → validate true-positive rate → write custom Sigma rules for coverage gaps → document as a full IR case with ATT&CK mapping
+
+**Actively building toward:** more custom Sigma rules across MITRE ATT&CK tactics (persistence, credential access, lateral movement), and a repeatable case-documentation template for every new lab.
 
 <br>
 
@@ -152,8 +143,8 @@ Hands-on Cisco IOS labs, not just theory:
 ```diff
 + CEH (Certified Ethical Hacker) — Completed, Corvit
 + Learning CCNP + Huawei configuration (GNS3 / eNSP)
-+ Sharpening exploitation and post-exploitation workflows on new lab targets
-+ Preparing for Penetration Tester / Red Team entry-level roles
++ Writing more custom Sigma rules to close detection gaps across ATT&CK tactics
++ Preparing for SOC Analyst L1 / Blue Team roles
 ```
 
 <br>
